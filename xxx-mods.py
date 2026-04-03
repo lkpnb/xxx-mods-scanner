@@ -45,7 +45,7 @@ while True:
             if '"' in lujing:
                 lujing1=lujing.replace('"','')
                 lujing2=lujing1.split(".")[0]
-                with open(lujing,"r",encoding="utf-8") as f:
+                with open(lujing1,"r",encoding="utf-8") as f:
                     wangzhang=f.read().splitlines()
                     for a in wangzhang:
                         try:
