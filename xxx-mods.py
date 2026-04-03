@@ -41,7 +41,7 @@ while True:
         else:
             print("储存文件已经存在")
         if gongneng=="1":
-            lujing=input("请存储网站的txt文件地址(格式"文件地址"):")
+            lujing=input("请存储网站的txt文件地址(格式'文件地址'):")
             if '"' in lujing:
                 lujing1=lujing.replace('"','')
                 lujing2=lujing1.split(".")[0]
