@@ -41,12 +41,12 @@ while True:
         else:
             print("储存文件已经存在")
         if gongneng=="1":
-            lujing=input("请存储网站的txt文件地址:")
+            lujing=input("请存储网站的txt文件地址(格式"文件地址"):")
             if '"' in lujing:
-                lujing=lujing.replace('"','')
+                lujing1=lujing.replace('"','')
+                lujing2=lujing1.split(".")[0]
                 with open(lujing,"r",encoding="utf-8") as f:
                     wangzhang=f.read().splitlines()
-                    lujing1=lujing.split("\\")[1]
                     for a in wangzhang:
                         try:
                             if "http://" not in a and "https://" not in a:
@@ -56,7 +56,16 @@ while True:
                                 title=re.findall(r"<title>(.*?)</title>",response.text)
                                 pry=re.findall(r"\d+\.\d+\.\d+\.\d+",response.text)
                                 print(f"目标网站：{a}  --> 状态码：{response.status_code}  -->标题：{title}  --> 可能存在代理{pry} ")
-                                with open(f"XXX-mods结果/{lujing1}探活结果.txt","a+",encoding="utf-8") as f:
+                                with open(f"XXX-mods结果/{lujing2}探活结果.txt","a+",encoding="utf-8") as f:
+                                    f.write(f"目标网站：{a}  --> 状态码：{response.status_code}  -->标题：{title}  --> 可能存在代理{pry}\n")
+                            else:
+                                url=a
+                                response = requests.get(url,headers=headers,timeout=2.5)
+                                response.encoding="utf-8"
+                                title=re.findall(r"<title>(.*?)</title>",response.text)
+                                pry=re.findall(r"\d+\.\d+\.\d+\.\d+",response.text)
+                                print(f"目标网站：{a}  --> 状态码：{response.status_code}  -->标题：{title}  --> 可能存在代理{pry} ")
+                                with open(f"XXX-mods结果/{lujing2}探活结果.txt","a+",encoding="utf-8") as f:
                                     f.write(f"目标网站：{a}  --> 状态码：{response.status_code}  -->标题：{title}  --> 可能存在代理{pry}\n")
                         except Exception as e:
                             print(f"目标网站：{a}失活")
