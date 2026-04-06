@@ -12,3 +12,4 @@
 ## 环境依赖
 ```bash
 pip install -r requirements.txt
+![17395614222634368](https://github.com/user-attachments/assets/f00b85c8-c1a0-4442-b4e9-1ee067d93c2e)
