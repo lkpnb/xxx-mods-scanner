@@ -13,5 +13,5 @@
 ```bash
 pip install -r requirements.txt
 
-![功能](https://github.com/lkpnb/xxx-mods-scanner/blob/main/image/Snipaste_2026-04-06_19-53-58.png)
+![功能](https://github.com/lkpnb/xxx-mods-scanner/blob/main/image/Snipaste_2026-04-06_19-53-58.png?raw=ture)
 
