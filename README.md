@@ -13,3 +13,5 @@
 ```bash
 pip install -r requirements.txt
 
+![功能](https://github.com/user-attachments/assets/ae9f63a0-a403-4f94-b8d7-fa1ddb97b891)
+
